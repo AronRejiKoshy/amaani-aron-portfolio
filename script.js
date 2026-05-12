@@ -2,6 +2,7 @@ const projectCards = document.querySelectorAll(".project-card");
 const projectsContainer = document.getElementById("projects-container");
 const root = document.documentElement;
 const resetButton = document.getElementById("reset-toggle");
+const mainLogo = document.getElementById("main-logo");
 
 // Store the default neutral colors
 const defaultBg = "#111111";
@@ -19,6 +20,9 @@ function resetArchive() {
   });
   
   projectsContainer.classList.remove("has-active");
+
+  // Reset the top-left logo highlights
+  mainLogo.classList.remove("is-active-amaani", "is-active-aron");
 
   // Reset CSS variables to default
   root.style.setProperty('--bg', defaultBg);
@@ -55,6 +59,13 @@ projectCards.forEach((card) => {
       
       card.classList.remove("inactive");
       card.classList.add("active");
+
+      // Update the top-left logo to highlight the author
+      const author = card.getAttribute("data-author");
+      mainLogo.classList.remove("is-active-amaani", "is-active-aron");
+      if (author) {
+        mainLogo.classList.add(`is-active-${author}`);
+      }
 
       // Grab the specific brand colors from the HTML data attributes
       const newBg = card.getAttribute("data-bg");
