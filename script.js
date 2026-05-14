@@ -25,6 +25,9 @@ function resetArchive() {
   root.style.setProperty('--text', defaultText);
   root.style.setProperty('--secondary', defaultSec);
 
+  // Stop any global backgrounds
+  document.querySelectorAll('.global-bg-layer').forEach(layer => layer.classList.remove('active'));
+
   document.querySelectorAll('video').forEach(video => {
     video.pause();
     video.currentTime = 0;
@@ -61,6 +64,14 @@ projectCards.forEach((card) => {
       
       card.classList.remove("inactive");
       card.classList.add("active");
+
+      // Handle Full-Screen Backgrounds
+      document.querySelectorAll('.global-bg-layer').forEach(layer => layer.classList.remove('active'));
+      const bgLayerId = card.getAttribute("data-bg-layer");
+      if (bgLayerId) {
+        const layer = document.getElementById(bgLayerId + "-global-bg");
+        if (layer) layer.classList.add("active");
+      }
 
       const author = card.getAttribute("data-author");
       mainLogo.classList.remove("is-active-amaani", "is-active-aron");
