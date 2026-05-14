@@ -35,7 +35,7 @@ body {
   z-index: 9999;
 }
 
-/* --- THE FIX: GLOBAL FULL-SCREEN BACKGROUNDS --- */
+/* --- GLOBAL FULL-SCREEN BACKGROUNDS --- */
 .global-bg-layer {
   position: fixed;
   inset: 0;
@@ -464,6 +464,19 @@ body:has(.projects.has-active) nav {
   background: #f2afb1;
   color: #dc0d6b;
   border: 2px solid #dc0d6b; 
+}
+
+/* THE FIX: Updated Twinings controls for the new #ffc864 / black theme */
+.twinings-controls .carousel-btn {
+  background: #000000;
+  color: #ffc864;
+  border: 2px solid transparent; 
+}
+
+.twinings-controls .carousel-btn:hover {
+  background: #ffc864;
+  color: #000000;
+  border: 2px solid #000000; 
 }
 
 /* --- VIDEO CONTROLS --- */
