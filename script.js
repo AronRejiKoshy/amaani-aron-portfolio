@@ -24,6 +24,7 @@ function resetArchive() {
   root.style.setProperty('--bg', defaultBg);
   root.style.setProperty('--text', defaultText);
   root.style.setProperty('--secondary', defaultSec);
+  root.style.setProperty('--copy', defaultText); // Fixes reset text color
 
   // Stop any global backgrounds
   document.querySelectorAll('.global-bg-layer').forEach(layer => layer.classList.remove('active'));
@@ -79,13 +80,16 @@ projectCards.forEach((card) => {
         mainLogo.classList.add(`is-active-${author}`);
       }
 
+      // THE FIX: Pulls in the new copy color variable specifically for paragraph text
       const newBg = card.getAttribute("data-bg");
       const newText = card.getAttribute("data-text");
       const newSec = card.getAttribute("data-sec");
+      const newCopy = card.getAttribute("data-copy") || newText; 
 
       root.style.setProperty('--bg', newBg);
       root.style.setProperty('--text', newText);
       root.style.setProperty('--secondary', newSec);
+      root.style.setProperty('--copy', newCopy); 
     }
   });
 });
