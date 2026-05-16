@@ -35,7 +35,7 @@ body {
   z-index: 9999;
 }
 
-/* --- GLOBAL FULL-SCREEN BACKGROUNDS --- */
+/* --- THE FIX: GLOBAL FULL-SCREEN BACKGROUNDS --- */
 .global-bg-layer {
   position: fixed;
   inset: 0;
@@ -466,7 +466,6 @@ body:has(.projects.has-active) nav {
   border: 2px solid #dc0d6b; 
 }
 
-/* THE FIX: Updated Twinings controls for the new #ffc864 / black theme */
 .twinings-controls .carousel-btn {
   background: #000000;
   color: #ffc864;
@@ -478,6 +477,32 @@ body:has(.projects.has-active) nav {
   color: #000000;
   border: 2px solid #000000; 
 }
+
+.what-controls .carousel-btn {
+  background: #db5d8c;
+  color: #313131;
+  border: 2px solid transparent; 
+}
+
+.what-controls .carousel-btn:hover {
+  background: #313131;
+  color: #db5d8c;
+  border: 2px solid #db5d8c; 
+}
+
+/* THE FIX: Pokémon Controls */
+.pokemon-controls .carousel-btn {
+  background: #ffc93b;
+  color: #385fa2;
+  border: 2px solid transparent; 
+}
+
+.pokemon-controls .carousel-btn:hover {
+  background: #385fa2;
+  color: #ffc93b;
+  border: 2px solid #ffc93b; 
+}
+
 
 /* --- VIDEO CONTROLS --- */
 .video-container {
